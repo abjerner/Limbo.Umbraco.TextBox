@@ -7,6 +7,7 @@ namespace Limbo.Umbraco.TextBox {
     internal class TextBoxComposer : IComposer {
 
         public void Compose(IUmbracoBuilder builder) {
+            builder.ManifestFilters().Append<TextBoxManifestFilter>();
             builder.Services.AddSingleton<TextBoxHelper>();
         }
 

@@ -1,6 +1,6 @@
 ﻿[
   {
-    "outputFile": "App_Plugins/Limbo.TextBox/Styles/Default.css",
-    "inputFile": "App_Plugins/Limbo.TextBox/Styles/Default.less"
+    "outputFile": "wwwroot/Styles/Default.css",
+    "inputFile": "wwwroot/Limbo.TextBox/Styles/Default.less"
   }
 ]

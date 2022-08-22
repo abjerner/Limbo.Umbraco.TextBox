@@ -12,11 +12,11 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors {
     [DataEditor(EditorAlias, EditorType.PropertyValue, "Limbo Textarea", EditorView, ValueType = ValueTypes.Text, Group = "Limbo", Icon = EditorIcon)]
     public class TextAreaDataEditor : DataEditor {
 
-        internal const string EditorAlias = "Limbo.TextArea";
+        internal const string EditorAlias = "Limbo.Umbraco.TextArea";
 
-        internal const string EditorIcon = "icon-autofill color-skybrud";
+        internal const string EditorIcon = "icon-autofill color-limbo";
 
-        internal const string EditorView = "/App_Plugins/Limbo.TextBox/Views/TextArea.html";
+        internal const string EditorView = "/App_Plugins/Limbo.Umbraco.TextBox/Views/TextArea.html";
 
         private readonly IIOHelper _ioHelper;
         private readonly IEditorConfigurationParser _editorConfigurationParser;

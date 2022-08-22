@@ -1,7 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <StaticWebAssetBasePath>App_Plugins/$(AssemblyName)</StaticWebAssetBasePath>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -32,20 +33,19 @@
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.0.0-rc4" />
   </ItemGroup>
 
-  <!-- Include NuGet dependencies -->
-  <ItemGroup>
-    <Content Include="App_Plugins\Limbo.TextBox\**\*.css" />
-    <Content Include="App_Plugins\Limbo.TextBox\**\*.html" />
-    <Content Include="App_Plugins\Limbo.TextBox\**\*.js" />
-    <Content Include="App_Plugins\Limbo.TextBox\Lang\*.xml" />
-    <None Remove="App_Plugins\Limbo.TextBox\Styles\Default.min.css" />
-    <Content Include="App_Plugins\Limbo.TextBox\package.manifest" />
-    <None Include="../build/Limbo.png" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
   <!-- Include package icon for NuGet -->
   <ItemGroup>
     <Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Include backoffice assets -->
+  <ItemGroup>
+    <Content Remove="wwwroot\**\*" />
+    <Content Include="wwwroot\**\*.css" />
+    <Content Include="wwwroot\**\*.html" />
+    <Content Include="wwwroot\**\*.js" />
+    <Content Include="wwwroot\Lang\*.xml" />
+    <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
   <!-- Generate XML documentation -->
