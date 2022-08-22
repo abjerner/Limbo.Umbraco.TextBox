@@ -38,14 +38,12 @@
     <Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-  <!-- Include backoffice assets -->
+  <!-- Handle backoffice assets -->
   <ItemGroup>
-    <Content Remove="wwwroot\**\*" />
-    <Content Include="wwwroot\**\*.css" />
-    <Content Include="wwwroot\**\*.html" />
-    <Content Include="wwwroot\**\*.js" />
-    <Content Include="wwwroot\Lang\*.xml" />
     <Content Remove="compilerconfig.json" />
+    <None Include="compilerconfig.json" />
+    <Content Remove="wwwroot\Styles\Default.less" />
+    <None Include="wwwroot\Styles\Default.less" />
   </ItemGroup>
 
   <!-- Generate XML documentation -->
