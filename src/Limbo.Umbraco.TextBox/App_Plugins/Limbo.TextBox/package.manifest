@@ -1,0 +1,8 @@
+﻿{
+  "javascript": [
+    "/App_Plugins/Limbo.TextBox/Scripts/Controllers/TextBox.js"
+  ],
+  "css": [
+    "/App_Plugins/Limbo.TextBox/Styles/Default.css"
+  ]
+}

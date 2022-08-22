@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <VersionPrefix>1.0.0-alpha001</VersionPrefix>
+    <VersionSuffix Condition="'$(Configuration)'=='Debug'">$([System.DateTime]::UtcNow.ToString(`yyyyMMddHHmm`))</VersionSuffix>
+    <Company>Limbo</Company>
+    <Authors>Anders Bjerner</Authors>
+    <Copyright>Copyright © 2022</Copyright>
+    <Title>Limbo TextBox</Title>
+    <Description>TextBox property editor for Umbraco 10.</Description>
+  </PropertyGroup>
+
+  <!-- Information for the NuGet package -->
+  <PropertyGroup>
+    <PackageId>Limbo.Umbraco.TextBox</PackageId>
+    <PackageTags>Limbo, Limbo, Umbraco, Textbox, Textarea, Umbraco-Marketplace</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/abjerner/Limbo.Umbraco.TextBox</PackageProjectUrl>
+    <PackageIcon>Limbo.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/abjerner/Limbo.Umbraco.TextBox</RepositoryUrl>
+  </PropertyGroup>
+
+  <!-- Include NuGet dependencies -->
+  <ItemGroup>
+    <PackageReference Include="Skybrud.Essentials" Version="1.1.41" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="10.0.0-rc4" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.0.0-rc4" />
+  </ItemGroup>
+
+  <!-- Include NuGet dependencies -->
+  <ItemGroup>
+    <Content Include="App_Plugins\Limbo.TextBox\**\*.css" />
+    <Content Include="App_Plugins\Limbo.TextBox\**\*.html" />
+    <Content Include="App_Plugins\Limbo.TextBox\**\*.js" />
+    <Content Include="App_Plugins\Limbo.TextBox\Lang\*.xml" />
+    <None Remove="App_Plugins\Limbo.TextBox\Styles\Default.min.css" />
+    <Content Include="App_Plugins\Limbo.TextBox\package.manifest" />
+    <None Include="../build/Limbo.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Include package icon for NuGet -->
+  <ItemGroup>
+    <Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!-- Generate XML documentation -->
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+  </PropertyGroup>
+
+</Project>

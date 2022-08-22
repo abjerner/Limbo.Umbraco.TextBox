@@ -1,0 +1,4 @@
+<div class="LimboTextBox" ng-controller="Limbo.TextBox.Controller as vm">
+    <input id="{{model.alias}}" ng-model="model.value" ng-change="vm.update()" type="text" class="umb-property-editor umb-textstring textstring" placeholder="{{vm.placeholder}}"/>
+    <div ng-if="vm.info" class="info" ng-bind-html="vm.info"></div>
+</div>
