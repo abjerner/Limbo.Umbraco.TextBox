@@ -14,6 +14,10 @@
 - **Fallback text**  
   An optional fallback text may be set on the data type to be used instead when the property is left blank. The underlying property value converter will make sure the fallback value is returned when this is the case.
 
+
+
+<br /><br />
+
 ## Installation
 
 The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.0). To install the package, you can use either .NET CLI:
@@ -24,6 +28,10 @@ dotnet add package Limbo.Umbraco.TextBox --version 1.0.0
 
 > **Note**  
 > This package replaces our older [Skybrud.Umbraco.TextBox](https://github.com/abjerner/Skybrud.Umbraco.TextBox) package. See this package for older version of Umbraco.
+
+
+
+<br /><br />
 
 ## Screenshots
 
