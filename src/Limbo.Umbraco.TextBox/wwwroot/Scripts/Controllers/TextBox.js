@@ -13,7 +13,7 @@
 
             vm.info = `You cannot write more than <strong class="negative">${vm.limit}</strong> characters!`;
 
-            localizationService.localize("skyTextBox_info3", [vm.limit]).then(function (value) {
+            localizationService.localize("limboTextBox_info3", [vm.limit]).then(function (value) {
                 vm.info = value;
             });
 
@@ -24,11 +24,11 @@
             const remaining = (vm.limit - $scope.model.value.length);
 
             if ($scope.model.value.length > vm.limit) {
-                localizationService.localize("skyTextBox_info2", [remaining]).then(function (value) {
+                localizationService.localize("limboTextBox_info2", [remaining]).then(function (value) {
                     vm.info = value;
                 });
             } else {
-                localizationService.localize("skyTextBox_info1", [remaining]).then(function (value) {
+                localizationService.localize("limboTextBox_info1", [remaining]).then(function (value) {
                     vm.info = value;
                 });
             }
