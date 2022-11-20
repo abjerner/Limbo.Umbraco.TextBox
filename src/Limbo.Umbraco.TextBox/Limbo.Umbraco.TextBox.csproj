@@ -18,7 +18,7 @@
   <!-- Information for the NuGet package -->
   <PropertyGroup>
     <PackageId>Limbo.Umbraco.TextBox</PackageId>
-    <PackageTags>Limbo, Limbo, Umbraco, Textbox, Textarea, Umbraco-Marketplace</PackageTags>
+    <PackageTags>Limbo, Skybrud, Umbraco, Textbox, Textarea, Umbraco-Marketplace</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/abjerner/Limbo.Umbraco.TextBox</PackageProjectUrl>
     <PackageIcon>Limbo.png</PackageIcon>
