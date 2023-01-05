@@ -1,6 +1,6 @@
 # Limbo Textbox [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) [![NuGet](https://img.shields.io/nuget/vpre/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox) [![NuGet](https://img.shields.io/nuget/dt/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox) [![Our Umbraco](https://img.shields.io/badge/our-umbraco-%233544B1)](https://our.umbraco.com/packages/backoffice-extensions/limbo-textbox/)
 
-**Limbo Textbox** (or **Limbo.Umbraco.TextBox**) is a package that adds new textbox and textarea properties for Umbraco 10. While having similar functionality to the build in property editors, this package adds a few extra features:
+**Limbo Textbox** (or **Limbo.Umbraco.TextBox**) is a package that adds new textbox and textarea property editors for Umbraco 10+. While having similar functionality to the build in property editors, this package adds a few extra features:
 
 - **More visible character limit**  
   The default property editors in Umbraco only shows the limit when it has been reached, whereas the property editors in this package show the limit right away, making it more visual to the editor that there is a limit.
@@ -20,10 +20,10 @@
 
 ## Installation
 
-The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.0). To install the package, you can use either .NET CLI:
+The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.1). To install the package, you can use either .NET CLI:
 
 ```
-dotnet add package Limbo.Umbraco.TextBox --version 1.0.0
+dotnet add package Limbo.Umbraco.TextBox --version 1.0.1
 ```
 
 > **Note**  
