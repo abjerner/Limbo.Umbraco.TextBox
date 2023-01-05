@@ -29,13 +29,13 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors {
         /// Gets or sets the placeholder text of the textarea.
         /// </summary>
         [ConfigurationField("placeholder", "Placeholder", "textstring", Description = "A placeholder text to show when the field is empty.")]
-        public string Placeholder { get; set; }
+        public string? Placeholder { get; set; }
 
         /// <summary>
         /// Gets or sets the fallback text of the textarea.
         /// </summary>
         [ConfigurationField("fallback", "Fallback", "textstring", Description = "A fallback text used instead if the property is left blank.")]
-        public string Fallback { get; set; }
+        public string? Fallback { get; set; }
 
         /// <summary>
         /// Gets or sets whether HTML tags should be stripped from the output value.

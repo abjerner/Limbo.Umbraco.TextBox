@@ -24,25 +24,21 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors.ValueConverters {
             return propertyType.EditorAlias == TextAreaDataEditor.EditorAlias;
         }
 
-        public override object ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object source, bool preview) {
+        public override object? ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object? source, bool preview) {
             return source;
         }
 
-        public override object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview) {
+        public override object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object? inter, bool preview) {
 
             if (inter is not string value) return string.Empty;
             if (propertyType.DataType.Configuration is not TextAreaConfiguration config) return string.Empty;
 
             if (string.IsNullOrWhiteSpace(value)) {
-                return config.Fallback.IsNullOrWhiteSpace() ? string.Empty : _localizedTextService.UmbracoDictionaryTranslate(_cultureDictionary, config.Fallback);
+                return config.Fallback.IsNullOrWhiteSpace() ? string.Empty : _localizedTextService.UmbracoDictionaryTranslate(_cultureDictionary, config.Fallback) ?? string.Empty;
             }
 
             return config.StripHtml ? StringUtils.StripHtml(value) : value;
 
-        }
-
-        public override object ConvertIntermediateToXPath(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object inter, bool preview) {
-            return null;
         }
 
         public override Type GetPropertyValueType(IPublishedPropertyType propertyType) {
