@@ -4,6 +4,8 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
 
+#pragma warning disable CS1591
+
 namespace Limbo.Umbraco.TextBox.PropertyEditors {
 
     /// <summary>
@@ -12,11 +14,11 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors {
     [DataEditor(EditorAlias, EditorType.PropertyValue, "Limbo Textarea", EditorView, ValueType = ValueTypes.Text, Group = "Limbo", Icon = EditorIcon)]
     public class TextAreaDataEditor : DataEditor {
 
-        internal const string EditorAlias = "Limbo.Umbraco.TextArea";
+        public const string EditorAlias = "Limbo.Umbraco.TextArea";
 
-        internal const string EditorIcon = "icon-autofill color-limbo";
+        public const string EditorIcon = "icon-autofill color-limbo";
 
-        internal const string EditorView = "/App_Plugins/Limbo.Umbraco.TextBox/Views/TextArea.html";
+        public const string EditorView = "/App_Plugins/Limbo.Umbraco.TextBox/Views/TextArea.html";
 
         private readonly IIOHelper _ioHelper;
         private readonly IEditorConfigurationParser _editorConfigurationParser;
