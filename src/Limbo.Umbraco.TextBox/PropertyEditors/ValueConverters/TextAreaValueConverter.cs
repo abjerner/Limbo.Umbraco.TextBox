@@ -6,9 +6,11 @@ using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
 
+#pragma warning disable CS1591
+
 namespace Limbo.Umbraco.TextBox.PropertyEditors.ValueConverters {
 
-    internal class TextAreaValueConverter : PropertyValueConverterBase {
+    public class TextAreaValueConverter : PropertyValueConverterBase {
 
         private readonly ILocalizedTextService _localizedTextService;
         private readonly ICultureDictionary _cultureDictionary;
