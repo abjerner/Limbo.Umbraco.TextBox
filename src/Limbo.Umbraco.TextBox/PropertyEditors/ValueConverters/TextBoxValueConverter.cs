@@ -30,8 +30,9 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors.ValueConverters {
 
         public override object ConvertIntermediateToObject(IPublishedElement owner, IPublishedPropertyType propertyType, PropertyCacheLevel referenceCacheLevel, object? inter, bool preview) {
 
-            if (inter is not string value) return string.Empty;
             if (propertyType.DataType.Configuration is not TextBoxConfiguration config) return string.Empty;
+
+            string? value = inter as string;
 
             if (string.IsNullOrWhiteSpace(value)) {
                 return config.Fallback.IsNullOrWhiteSpace() ? string.Empty : _localizedTextService.UmbracoDictionaryTranslate(_cultureDictionary, config.Fallback) ?? string.Empty;
