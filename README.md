@@ -20,10 +20,10 @@
 
 ## Installation
 
-The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.1). To install the package, you can use either .NET CLI:
+The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.2). To install the package, you can use either .NET CLI:
 
 ```
-dotnet add package Limbo.Umbraco.TextBox --version 1.0.1
+dotnet add package Limbo.Umbraco.TextBox --version 1.0.2
 ```
 
 > **Note**  
