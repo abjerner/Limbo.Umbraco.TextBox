@@ -43,6 +43,12 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors {
         [ConfigurationField("stripHtml", "Strip HTML", "boolean", Description = "Select if HTML entered by the user should be stripped in the output value.")]
         public bool StripHtml { get; set; }
 
+        /// <summary>
+        /// Gets or sets whether the property value is nullable.
+        /// </summary>
+        [ConfigurationField("nullable", "Nullable?", "boolean", Description = "Indicates whether properties of this type should be nullable - meaning that white space values will be converted to <code>null</code>.")]
+        public bool IsNullable { get; set; }
+
     }
 
 }
