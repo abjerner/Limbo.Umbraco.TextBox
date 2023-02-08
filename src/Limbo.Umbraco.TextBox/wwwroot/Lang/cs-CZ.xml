@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<language alias="cs" intName="Czech" localName="čeština" lcid="" culture="cs-CZ">
+  <area alias="limboTextBox">
+    <key alias="info1"><![CDATA[Zbývá <strong class="positive">%0% znaků.]]></key>
+    <key alias="info2"><![CDATA[Zbývá <strong class="negative">%0% znaků.]]></key>
+    <key alias="info3"><![CDATA[Nemůžete napsat více než <strong class="negative">%0%</strong> znaků!]]></key>
+  </area>
+</language>
