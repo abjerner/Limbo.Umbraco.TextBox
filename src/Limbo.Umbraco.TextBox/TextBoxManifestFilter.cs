@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Skybrud.Essentials.Strings.Extensions;
 using Umbraco.Cms.Core.Manifest;
 
 namespace Limbo.Umbraco.TextBox {
@@ -10,7 +9,9 @@ namespace Limbo.Umbraco.TextBox {
         /// <inheritdoc />
         public void Filter(List<PackageManifest> manifests) {
             manifests.Add(new PackageManifest {
-                PackageName = TextBoxPackage.Alias.ToKebabCase(),
+                AllowPackageTelemetry = true,
+                PackageName = TextBoxPackage.Name,
+                Version = TextBoxPackage.InformationalVersion,
                 BundleOptions = BundleOptions.Independent,
                 Scripts = new[] {
                     $"/App_Plugins/{TextBoxPackage.Alias}/Scripts/Controllers/TextBox.js"
