@@ -7,13 +7,13 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <VersionSuffix Condition="'$(Configuration)'=='Debug'">$([System.DateTime]::UtcNow.ToString(`yyyyMMddHHmm`))</VersionSuffix>
     <Company>Limbo</Company>
     <Authors>Anders Bjerner</Authors>
     <Copyright>Copyright © $([System.DateTime]::UtcNow.ToString(`yyyy`))</Copyright>
-    <Title>Limbo TextBox</Title>
-    <Description>TextBox property editor for Umbraco 10+.</Description>
+    <Title>Limbo Textbox</Title>
+    <Description>Textbox property editor for Umbraco 10+.</Description>
   </PropertyGroup>
 
   <!-- Information for the NuGet package -->
