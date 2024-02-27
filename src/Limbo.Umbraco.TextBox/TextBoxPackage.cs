@@ -27,7 +27,10 @@ public static class TextBoxPackage {
     /// <summary>
     /// Gets the informational version of the package.
     /// </summary>
-    public static readonly string InformationalVersion = FileVersionInfo.GetVersionInfo(typeof(TextBoxPackage).Assembly.Location).ProductVersion!;
+    public static readonly string InformationalVersion = FileVersionInfo
+        .GetVersionInfo(typeof(TextBoxPackage).Assembly.Location)
+        .ProductVersion!
+        .Split('+')[0];
 
     /// <summary>
     /// Gets the semantic version of the package.
