@@ -16,7 +16,7 @@ public class TextAreaDataEditor : DataEditor {
 
     public const string EditorAlias = "Limbo.Umbraco.TextArea";
 
-    public const string EditorIcon = "icon-autofill color-limbo";
+    public const string EditorIcon = "icon-application-window-alt color-limbo";
 
     public const string EditorView = "/App_Plugins/Limbo.Umbraco.TextBox/Views/TextArea.html";
 
