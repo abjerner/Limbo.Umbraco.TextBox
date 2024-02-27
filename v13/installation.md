@@ -5,7 +5,7 @@ icon: fa fa-download
 
 # Installation
 
-Version 13 supports Umbraco 13, and is available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox).
+The `v13.x` releases target Umbraco 13. The releases does not support other versions of Umbraco.
 
 <div class="installation" version="13">
     To install the package, either use the .NET CLI:
