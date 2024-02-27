@@ -1,13 +1,13 @@
 ---
-title: Version 13
+title: Version 1
 order: 99
 icon: fa-code-branch
-order: -13
+order: -1
 ---
 
 # Limbo Textbox
 
-Version 13 of **Limbo Models Builder** supports Umbraco 13. This version of the package does not support other versions of Umbraco.
+Version 1 of **Limbo Models Builder** supports Umbraco 10-12.
 
 ## Getting Started
 
