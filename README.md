@@ -1,4 +1,9 @@
-# Limbo Textbox [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md) [![NuGet](https://img.shields.io/nuget/vpre/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox) [![NuGet](https://img.shields.io/nuget/dt/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox) [![Umbraco Marketplace](https://img.shields.io/badge/umbraco-marketplace-%233544B1)](https://marketplace.umbraco.com/package/limbo.umbraco.textbox)
+# Limbo Textbox
+
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+[![NuGet](https://img.shields.io/nuget/vpre/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox)
+[![NuGet](https://img.shields.io/nuget/dt/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox)
+[![Umbraco Marketplace](https://img.shields.io/badge/umbraco-marketplace-%233544B1)](https://marketplace.umbraco.com/package/limbo.umbraco.textbox)
 
 **Limbo Textbox** (or **Limbo.Umbraco.TextBox**) is a package that adds new textbox and textarea property editors for Umbraco 10+. While having similar functionality to the build in property editors, this package adds a few extra features:
 
@@ -38,7 +43,7 @@
 
 ## Installation
 
-The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.3). To install the package, you can use either .NET CLI:
+The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.4). To install the package, you can use either .NET CLI:
 
 ```
 dotnet add package Limbo.Umbraco.TextBox --version 1.0.4

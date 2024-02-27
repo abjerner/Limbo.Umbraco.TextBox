@@ -2,16 +2,14 @@
 using Umbraco.Cms.Core.PropertyEditors;
 using Umbraco.Cms.Core.Services;
 
-namespace Limbo.Umbraco.TextBox.PropertyEditors {
+namespace Limbo.Umbraco.TextBox.PropertyEditors;
 
-    /// <summary>
-    /// Represents the configuration editor for the textarea value editor.
-    /// </summary>
-    public class TextAreaConfigurationEditor : ConfigurationEditor<TextAreaConfiguration> {
+/// <summary>
+/// Represents the configuration editor for the textarea value editor.
+/// </summary>
+public class TextAreaConfigurationEditor : ConfigurationEditor<TextAreaConfiguration> {
 
-        /// <inheritdoc />
-        public TextAreaConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser) { }
-
-    }
+    /// <inheritdoc />
+    public TextAreaConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser) { }
 
 }
