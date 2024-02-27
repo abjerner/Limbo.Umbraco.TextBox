@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/dt/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox)
 [![Umbraco Marketplace](https://img.shields.io/badge/umbraco-marketplace-%233544B1)](https://marketplace.umbraco.com/package/limbo.umbraco.textbox)
 
-**Limbo Textbox** (or **Limbo.Umbraco.TextBox**) is a package that adds new textbox and textarea property editors for Umbraco 10+. While having similar functionality to the build in property editors, this package adds a few extra features:
+**Limbo Textbox** (or **Limbo.Umbraco.TextBox**) is a package that adds new textbox and textarea property editors for Umbraco. While having similar functionality to the build in property editors, this package adds a few extra features:
 
 - **More visible character limit**  
   The default property editors in Umbraco only shows the limit when it has been reached, whereas the property editors in this package show the limit right away, making it more visual to the editor that there is a limit.
@@ -26,11 +26,11 @@
   </tr>
   <tr>
     <td><strong>Umbraco:</strong></td>
-    <td>Umbraco 10, 11 and 12</td>
+    <td>Umbraco 13</td>
   </tr>
   <tr>
     <td><strong>Target Framework:</strong></td>
-    <td>.NET 6</td>
+    <td>.NET 8</td>
   </tr>
 </table>
 
@@ -43,20 +43,25 @@
 
 ## Installation
 
-The Umbraco 10 version of this package is only available via [NuGet](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/1.0.4). To install the package, you can use either .NET CLI:
+The Umbraco 13 version of this package is only available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/13.0.0). To install the package, you can use either .NET CLI:
 
 ```
-dotnet add package Limbo.Umbraco.TextBox --version 1.0.4
+dotnet add package Limbo.Umbraco.TextBox --version 13.0.0
 ```
 
 or the NuGet Package Manager:
 
 ```
-Install-Package Limbo.Umbraco.TextBox -Version 1.0.4
+Install-Package Limbo.Umbraco.TextBox -Version 13.0.0
 ```
 
-> **Note**  
-> This package replaces our older [Skybrud.Umbraco.TextBox](https://github.com/abjerner/Skybrud.Umbraco.TextBox) package. See this package for older versions of Umbraco.
+### Other versions of Umbraco
+
+- **Umbraco 10-12**  
+See the the [**v1/main**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v1/main) branch.
+
+- **Umbraco 8-9**  
+See our older [Skybrud.Umbraco.TextBox](https://github.com/abjerner/Skybrud.Umbraco.TextBox) package.
 
 
 

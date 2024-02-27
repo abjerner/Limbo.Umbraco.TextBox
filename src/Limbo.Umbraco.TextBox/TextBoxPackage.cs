@@ -50,6 +50,6 @@ public static class TextBoxPackage {
     /// <summary>
     /// Gets the URL of the documentation for this package.
     /// </summary>
-    public const string DocumentationUrl = "https://packages.limbo.works/limbo.umbraco.textbox/v1/docs/";
+    public const string DocumentationUrl = "https://packages.limbo.works/limbo.umbraco.textbox/v13/docs/";
 
 }
