@@ -1,0 +1,14 @@
+{
+  "$schema": "../../umbraco-package-schema.json",
+  "name": "Limbo Textbox",
+  "version": "17.0.0",
+  "allowPackageTelemetry": true,
+  "extensions": [
+    {
+      "type": "bundle",
+      "alias": "Limbo.Umbraco.TextBox.Bundle",
+      "name": "Limbo Textbox Bundle",
+      "js": "/App_Plugins/Limbo.Umbraco.TextBox/limbo-textbox.js"
+    }
+  ]
+}

@@ -33,7 +33,8 @@ public class TextAreaValueConverter : PropertyValueConverterBase {
 
         string? value = inter as string;
 
-        if (propertyType.DataType.Configuration is not TextAreaConfiguration config) return value ?? string.Empty;
+        // [CHANGE: upgrade to Umbraco 17] Related: TextBoxValueConverter.cs - DataType.Configuration renamed to ConfigurationObject
+        if (propertyType.DataType.ConfigurationObject is not TextAreaConfiguration config) return value ?? string.Empty;
 
         if (string.IsNullOrWhiteSpace(value)) {
             value = config.Fallback.IsNullOrWhiteSpace() ? string.Empty : _localizedTextService.UmbracoDictionaryTranslate(_cultureDictionary, config.Fallback) ?? string.Empty;

@@ -1,19 +1,20 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <StaticWebAssetBasePath>App_Plugins/$(AssemblyName)</StaticWebAssetBasePath>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup>
-    <VersionPrefix>13.0.0</VersionPrefix>
+    <VersionPrefix>17.0.0</VersionPrefix>
+    <VersionSuffix>alpha000</VersionSuffix>
     <VersionSuffix Condition="'$(Configuration)'=='Debug'">$([System.DateTime]::UtcNow.ToString(`yyyyMMddHHmm`))</VersionSuffix>
     <Company>Limbo</Company>
     <Authors>Anders Bjerner</Authors>
     <Copyright>Copyright © $([System.DateTime]::UtcNow.ToString(`yyyy`))</Copyright>
     <Title>Limbo Textbox</Title>
-    <Description>Textbox property editor for Umbraco 10+.</Description>
+    <Description>Textbox property editor for Umbraco 17.</Description>
   </PropertyGroup>
 
   <!-- Information for the NuGet package -->
@@ -21,7 +22,7 @@
     <PackageId>Limbo.Umbraco.TextBox</PackageId>
     <PackageTags>Limbo, Skybrud, Umbraco, Textbox, Textarea, Umbraco-Marketplace</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://packages.limbo.works/limbo.umbraco.textbox/v13/</PackageProjectUrl>
+    <PackageProjectUrl>https://packages.limbo.works/limbo.umbraco.textbox/v17/</PackageProjectUrl>
     <PackageIcon>Limbo.png</PackageIcon>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/abjerner/Limbo.Umbraco.TextBox</RepositoryUrl>
@@ -29,9 +30,8 @@
 
   <!-- Include NuGet dependencies -->
   <ItemGroup>
-    <PackageReference Include="Skybrud.Essentials" Version="1.1.56" />
-    <PackageReference Include="Umbraco.Cms.Core" Version="[13.0.0,13.999)" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[13.0.0,13.999)" />
+    <PackageReference Include="Skybrud.Essentials" Version="1.1.68" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="[17.0.0,17.999)" />
   </ItemGroup>
 
   <!-- Include package icon for NuGet -->
@@ -39,13 +39,26 @@
     <Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-  <!-- Handle backoffice assets -->
+  <!-- The client app (TypeScript/Lit) is built by Vite into wwwroot. These files are
+       generated and should not be tracked as compile/content items by MSBuild. -->
   <ItemGroup>
-    <Content Remove="compilerconfig.json" />
-    <None Include="compilerconfig.json" />
-    <Content Remove="wwwroot\Styles\Default.less" />
-    <None Include="wwwroot\Styles\Default.less" />
+    <Content Remove="package.json" />
+    <Content Remove="package-lock.json" />
+    <Content Remove="tsconfig.json" />
+    <Content Remove="vite.config.ts" />
+    <None Include="package.json" />
+    <None Include="tsconfig.json" />
+    <None Include="vite.config.ts" />
   </ItemGroup>
+
+  <!-- Build the client app (npm) before the .NET build so the compiled assets in
+       wwwroot are always up to date and included when packing. -->
+  <Target Name="BuildClient" BeforeTargets="BeforeBuild" Condition="!Exists('node_modules')">
+    <Exec Command="npm ci" WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+  <Target Name="BuildClientAssets" BeforeTargets="BeforeBuild">
+    <Exec Command="npm run build" WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
 
   <!-- Generate XML documentation -->
   <PropertyGroup>
