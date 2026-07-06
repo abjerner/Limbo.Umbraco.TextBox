@@ -9,3 +9,5 @@ src/Limbo.Umbraco.TextBox/wwwroot/*.js.map
 
 # Local Umbraco 17 test site (gitignored)
 test/
+src/Limbo.Umbraco.TextBox.Client/node_modules/
+src/Limbo.Umbraco.TextBox.Client/obj/

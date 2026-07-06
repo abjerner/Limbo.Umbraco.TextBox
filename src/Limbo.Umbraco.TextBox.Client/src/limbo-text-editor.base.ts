@@ -109,8 +109,6 @@ export abstract class LimboTextEditorElementBase extends UmbLitElement implement
       ${this._info
         ? html`<div class="info ${this._negative ? 'negative' : 'positive'}">${this._info}</div>`
         : nothing}
-        <div>13</div>
-        <pre>${JSON.stringify(this.value, null, 2)}</pre>
     `;
   }
 

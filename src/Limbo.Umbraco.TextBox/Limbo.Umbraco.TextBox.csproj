@@ -44,27 +44,6 @@
     <Content Include="../build/Limbo.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-  <!-- The client app (TypeScript/Lit) is built by Vite into wwwroot. These files are
-       generated and should not be tracked as compile/content items by MSBuild. -->
-  <ItemGroup>
-    <Content Remove="package.json" />
-    <Content Remove="package-lock.json" />
-    <Content Remove="tsconfig.json" />
-    <Content Remove="vite.config.ts" />
-    <None Include="package.json" />
-    <None Include="tsconfig.json" />
-    <None Include="vite.config.ts" />
-  </ItemGroup>
-
-  <!-- Build the client app (npm) before the .NET build so the compiled assets in
-       wwwroot are always up to date and included when packing. -->
-  <Target Name="BuildClient" BeforeTargets="BeforeBuild" Condition="!Exists('node_modules')">
-    <Exec Command="npm ci" WorkingDirectory="$(MSBuildProjectDirectory)" />
-  </Target>
-  <Target Name="BuildClientAssets" BeforeTargets="GenerateNuspec">
-    <Exec Command="npm run build" WorkingDirectory="$(MSBuildProjectDirectory)" />
-  </Target>
-
   <!-- Generate XML documentation -->
   <PropertyGroup>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
