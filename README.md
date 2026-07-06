@@ -1,6 +1,6 @@
 # Limbo Textbox
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.md)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/abjerner/Limbo.Umbraco.TextBox/blob/v17/main/LICENSE.md)
 [![NuGet](https://img.shields.io/nuget/vpre/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox)
 [![NuGet](https://img.shields.io/nuget/dt/Limbo.Umbraco.TextBox.svg)](https://www.nuget.org/packages/Limbo.Umbraco.TextBox)
 [![Umbraco Marketplace](https://img.shields.io/badge/umbraco-marketplace-%233544B1)](https://marketplace.umbraco.com/package/limbo.umbraco.textbox)
@@ -43,28 +43,26 @@
 
 ## Installation
 
-The Umbraco 17 version of this package is only available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/17.0.0). To install the package, you can use either .NET CLI:
+### Umbraco 17
+
+The Umbraco 17 version of this package is only available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox). To install the package, you can use either .NET CLI:
 
 ```
-dotnet add package Limbo.Umbraco.TextBox --version 17.0.0
+dotnet add package Limbo.Umbraco.TextBox --version 17.0.0-alpha001
 ```
 
 or the NuGet Package Manager:
 
 ```
-Install-Package Limbo.Umbraco.TextBox -Version 17.0.0
+Install-Package Limbo.Umbraco.TextBox -Version 17.0.0-alpha001
 ```
 
 ### Other versions of Umbraco
 
-- **Umbraco 13**  
-See the [**v13/main**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v13/main) branch.
+- [**`v13/main`**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v13/main) Umbraco 13
+- ~~[**`v1/main`**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v11/main) Umbraco 10, 11 and 12~~ <sub title="Umbraco 10, 11 and 12 have reached end-of-life"><sup>(EOL)</sup></sub>
 
-- **Umbraco 10-12**  
-See the [**v1/main**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v1/main) branch.
 
-- **Umbraco 8-9**  
-See our older [Skybrud.Umbraco.TextBox](https://github.com/abjerner/Skybrud.Umbraco.TextBox) package.
 
 
 
