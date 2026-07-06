@@ -42,17 +42,44 @@ export abstract class LimboTextEditorElementBase extends UmbLitElement implement
 
   protected readonly onInput = (event: Event): void => {
     const target = event.target as HTMLElement & { value: string };
+    const currentTarget = event.currentTarget as HTMLElement & { value: string } | null;
     let next = target.value ?? '';
 
     if (this._enforce && this._limit > 0 && next.length > this._limit) {
       next = next.substring(0, this._limit);
-      target.value = next;
     }
+
+    // Keep both the form control host and the raw event target in sync so the UI
+    // reflects the truncated value immediately.
+    target.value = next;
+    if (currentTarget && currentTarget !== target) {
+      currentTarget.value = next;
+    }
+
+    this.#syncNativeControl(currentTarget ?? target, next);
 
     this.value = next;
     this.#updateInfo();
     this.dispatchEvent(new UmbChangeEvent());
   };
+
+  #syncNativeControl(control: HTMLElement, value: string): void {
+    const nativeControl = control.shadowRoot?.querySelector('input, textarea') as
+      | (HTMLInputElement & HTMLTextAreaElement)
+      | null;
+
+    if (!nativeControl) return;
+
+    const selectionStart = 'selectionStart' in nativeControl ? nativeControl.selectionStart : null;
+    const selectionEnd = 'selectionEnd' in nativeControl ? nativeControl.selectionEnd : null;
+
+    nativeControl.value = value;
+
+    if (selectionStart !== null && selectionEnd !== null && typeof nativeControl.setSelectionRange === 'function') {
+      const selection = Math.min(selectionStart, value.length);
+      nativeControl.setSelectionRange(selection, Math.min(selectionEnd, value.length));
+    }
+  }
 
   #updateInfo(): void {
     if (this._limit < 1) {
@@ -82,6 +109,8 @@ export abstract class LimboTextEditorElementBase extends UmbLitElement implement
       ${this._info
         ? html`<div class="info ${this._negative ? 'negative' : 'positive'}">${this._info}</div>`
         : nothing}
+        <div>13</div>
+        <pre>${JSON.stringify(this.value, null, 2)}</pre>
     `;
   }
 
