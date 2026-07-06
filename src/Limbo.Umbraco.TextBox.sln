@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+# Visual Studio Version 18
+VisualStudioVersion = 18.8.11912.234 insiders
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Limbo.Umbraco.TextBox", "Limbo.Umbraco.TextBox\Limbo.Umbraco.TextBox.csproj", "{0431EB5C-FD1C-4908-BE9B-BADDAAC118C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{039D36F4-4763-4656-90B6-725D776F2A04}"
+	ProjectSection(SolutionItems) = preProject
+		..\debug.bat = ..\debug.bat
+		..\LICENSE.md = ..\LICENSE.md
+		..\README.md = ..\README.md
+		..\release.bat = ..\release.bat
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
