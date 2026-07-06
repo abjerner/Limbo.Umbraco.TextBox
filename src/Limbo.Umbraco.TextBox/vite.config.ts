@@ -13,7 +13,7 @@ export default defineConfig({
       fileName: 'limbo-textbox',
     },
     outDir: 'wwwroot',
-    emptyOutDir: false,
+    emptyOutDir: true,
     sourcemap: true,
     rollupOptions: {
       external: [/^@umbraco/],
