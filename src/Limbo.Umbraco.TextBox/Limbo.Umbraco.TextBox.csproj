@@ -61,7 +61,7 @@
   <Target Name="BuildClient" BeforeTargets="BeforeBuild" Condition="!Exists('node_modules')">
     <Exec Command="npm ci" WorkingDirectory="$(MSBuildProjectDirectory)" />
   </Target>
-  <Target Name="BuildClientAssets" BeforeTargets="BeforeBuild">
+  <Target Name="BuildClientAssets" BeforeTargets="GenerateNuspec">
     <Exec Command="npm run build" WorkingDirectory="$(MSBuildProjectDirectory)" />
   </Target>
 
