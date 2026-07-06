@@ -122,7 +122,6 @@ export abstract class LimboTextEditorElementBase extends UmbLitElement implement
         width: 100%;
       }
       .info {
-        margin-top: var(--uui-size-space-2, 6px);
         font-size: 0.85em;
       }
       .info.positive {
