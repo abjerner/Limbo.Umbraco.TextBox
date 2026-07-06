@@ -50,7 +50,7 @@ const textbox: ManifestPropertyEditorUi = {
   meta: {
     label: 'Limbo Textbox',
     icon: 'icon-autofill',
-    group: 'common',
+    group: 'Limbo',
     propertyEditorSchemaAlias: 'Limbo.Umbraco.TextBox',
     settings: {
       properties: [
@@ -74,7 +74,7 @@ const textarea: ManifestPropertyEditorUi = {
   meta: {
     label: 'Limbo Textarea',
     icon: 'icon-application-window-alt',
-    group: 'common',
+    group: 'Limbo',
     propertyEditorSchemaAlias: 'Limbo.Umbraco.TextArea',
     settings: {
       properties: [
