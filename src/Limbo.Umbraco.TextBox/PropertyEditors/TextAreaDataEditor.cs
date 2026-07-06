@@ -1,47 +1,32 @@
-﻿using System;
 using Umbraco.Cms.Core.IO;
-using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Cms.Core.Services;
 
 #pragma warning disable CS1591
 
 namespace Limbo.Umbraco.TextBox.PropertyEditors;
 
+// [CHANGE: upgrade to Umbraco 17] Related: TextBoxDataEditor.cs, umbraco-package.json, TextBoxComposer.cs
+// The v14+ DataEditor only describes the server-side schema. Name, icon, group and the
+// editor view now live in the TypeScript propertyEditorUi manifest (umbraco-package.json).
+
 /// <summary>
-/// Represents a textarea property editor.
+/// Represents a textarea property editor (server-side schema).
 /// </summary>
-[DataEditor(EditorAlias, EditorType.PropertyValue, "Limbo Textarea", EditorView, ValueType = ValueTypes.Text, Group = "Limbo", Icon = EditorIcon)]
+[DataEditor(EditorAlias, ValueType = ValueTypes.Text, ValueEditorIsReusable = true)]
 public class TextAreaDataEditor : DataEditor {
 
     public const string EditorAlias = "Limbo.Umbraco.TextArea";
 
-    public const string EditorIcon = "icon-application-window-alt color-limbo";
-
-    public const string EditorView = "/App_Plugins/Limbo.Umbraco.TextBox/Views/TextArea.html";
-
     private readonly IIOHelper _ioHelper;
-    private readonly IEditorConfigurationParser _editorConfigurationParser;
-    private readonly TextBoxHelper _helper;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="TextAreaDataEditor"/> class.
     /// </summary>
-    public TextAreaDataEditor(IDataValueEditorFactory dataValueEditorFactory, IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser, TextBoxHelper helper) : base(dataValueEditorFactory) {
+    public TextAreaDataEditor(IDataValueEditorFactory dataValueEditorFactory, IIOHelper ioHelper) : base(dataValueEditorFactory) {
         _ioHelper = ioHelper;
-        _editorConfigurationParser = editorConfigurationParser;
-        _helper = helper;
     }
 
     /// <inheritdoc/>
-    protected override IDataValueEditor CreateValueEditor() {
-        if (Attribute == null) throw new Exception($"'{GetType()}' does not specify a 'DataEditor' attribute");
-        TextOnlyValueEditor valueEditor = DataValueEditorFactory.Create<TextOnlyValueEditor>(Attribute);
-        if (valueEditor.View?.IndexOf('?') < 0) valueEditor.View += $"?umb__rnd={_helper.GetCacheBuster()}";
-        return valueEditor;
-    }
-
-    /// <inheritdoc/>
-    protected override IConfigurationEditor CreateConfigurationEditor() => new TextAreaConfigurationEditor(_ioHelper, _editorConfigurationParser);
+    protected override IConfigurationEditor CreateConfigurationEditor() => new TextAreaConfigurationEditor(_ioHelper);
 
 }

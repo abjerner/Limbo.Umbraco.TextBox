@@ -26,11 +26,11 @@
   </tr>
   <tr>
     <td><strong>Umbraco:</strong></td>
-    <td>Umbraco 13</td>
+    <td>Umbraco 17</td>
   </tr>
   <tr>
     <td><strong>Target Framework:</strong></td>
-    <td>.NET 8</td>
+    <td>.NET 10</td>
   </tr>
 </table>
 
@@ -43,22 +43,25 @@
 
 ## Installation
 
-The Umbraco 13 version of this package is only available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/13.0.0). To install the package, you can use either .NET CLI:
+The Umbraco 17 version of this package is only available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox/17.0.0). To install the package, you can use either .NET CLI:
 
 ```
-dotnet add package Limbo.Umbraco.TextBox --version 13.0.0
+dotnet add package Limbo.Umbraco.TextBox --version 17.0.0
 ```
 
 or the NuGet Package Manager:
 
 ```
-Install-Package Limbo.Umbraco.TextBox -Version 13.0.0
+Install-Package Limbo.Umbraco.TextBox -Version 17.0.0
 ```
 
 ### Other versions of Umbraco
 
+- **Umbraco 13**  
+See the [**v13/main**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v13/main) branch.
+
 - **Umbraco 10-12**  
-See the the [**v1/main**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v1/main) branch.
+See the [**v1/main**](https://github.com/abjerner/Limbo.Umbraco.TextBox/tree/v1/main) branch.
 
 - **Umbraco 8-9**  
 See our older [Skybrud.Umbraco.TextBox](https://github.com/abjerner/Skybrud.Umbraco.TextBox) package.

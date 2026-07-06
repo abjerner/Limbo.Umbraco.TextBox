@@ -1,8 +1,9 @@
 ﻿using Umbraco.Cms.Core.IO;
 using Umbraco.Cms.Core.PropertyEditors;
-using Umbraco.Cms.Core.Services;
 
 namespace Limbo.Umbraco.TextBox.PropertyEditors;
+
+// [CHANGE: upgrade to Umbraco 17] Related: TextAreaConfigurationEditor.cs - ConfigurationEditor<T> ctor now takes only IIOHelper
 
 /// <summary>
 /// Represents the configuration editor for the textbox value editor.
@@ -10,6 +11,6 @@ namespace Limbo.Umbraco.TextBox.PropertyEditors;
 public class TextBoxConfigurationEditor : ConfigurationEditor<TextBoxConfiguration> {
 
     /// <inheritdoc />
-    public TextBoxConfigurationEditor(IIOHelper ioHelper, IEditorConfigurationParser editorConfigurationParser) : base(ioHelper, editorConfigurationParser) { }
+    public TextBoxConfigurationEditor(IIOHelper ioHelper) : base(ioHelper) { }
 
 }

@@ -1,3 +1,11 @@
 src/.vs/
 src/Limbo.Umbraco.TextBox/bin/
 src/Limbo.Umbraco.TextBox/obj/
+
+# Backoffice client (TypeScript/Lit) build artifacts
+src/Limbo.Umbraco.TextBox/node_modules/
+src/Limbo.Umbraco.TextBox/wwwroot/*.js
+src/Limbo.Umbraco.TextBox/wwwroot/*.js.map
+
+# Local Umbraco 17 test site (gitignored)
+test/
