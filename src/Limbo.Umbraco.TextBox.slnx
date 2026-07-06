@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="../debug.bat" />
+    <File Path="../LICENSE.md" />
+    <File Path="../README.md" />
+    <File Path="../release.bat" />
+  </Folder>
+  <Project Path="Limbo.Umbraco.TextBox.Client/Limbo.Umbraco.TextBox.Client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="Limbo.Umbraco.TextBox/Limbo.Umbraco.TextBox.csproj" />
+</Solution>
