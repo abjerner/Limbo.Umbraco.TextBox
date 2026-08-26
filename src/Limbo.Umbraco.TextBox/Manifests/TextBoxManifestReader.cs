@@ -30,8 +30,7 @@ public class TextBoxManifestReader : IPackageManifestReader {
                         name = $"{TextBoxPackage.Name}: Bundle",
                         js = $"/App_Plugins/{alias}/limbo-textbox.js?v={cacheBuster}",
                     }
-                ],
-                Importmap = null,
+                ]
             }
 
         ];
