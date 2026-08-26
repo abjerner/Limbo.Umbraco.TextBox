@@ -27,7 +27,7 @@ public class TextBoxManifestReader : IPackageManifestReader {
                     new {
                         type = "bundle",
                         alias = $"{alias}.Bundle",
-                        name = "Limbo Textbox Bundle",
+                        name = $"{TextBoxPackage.Name}: Bundle",
                         js = $"/App_Plugins/{alias}/limbo-textbox.js?v={cacheBuster}",
                     }
                 ],

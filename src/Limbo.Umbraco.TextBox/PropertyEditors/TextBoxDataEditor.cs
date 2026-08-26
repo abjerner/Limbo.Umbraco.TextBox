@@ -17,6 +17,8 @@ public class TextBoxDataEditor : DataEditor {
 
     public const string EditorAlias = "Limbo.Umbraco.TextBox";
 
+    public const string EditorUiAlias = $"{EditorAlias}.Ui";
+
     private readonly IIOHelper _ioHelper;
 
     /// <summary>
