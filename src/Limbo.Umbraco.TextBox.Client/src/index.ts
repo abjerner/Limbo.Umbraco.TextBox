@@ -11,10 +11,10 @@ const NAME = "Limbo Textbox";
 const NAME2 = "Limbo Textarea";
 
 const TEXTBOX_ALIAS = `${ALIAS}`;
-const TEXTBOX_UI_ALIAS = `${TEXTBOX_ALIAS}.Ui`;
+const TEXTBOX_UI_ALIAS = `${TEXTBOX_ALIAS}.PropertyEditorUi`;
 
 const TEXTAREA_ALIAS = "Limbo.Umbraco.TextArea";
-const TEXTAREA_UI_ALIAS = `${TEXTAREA_ALIAS}.Ui`;
+const TEXTAREA_UI_ALIAS = `${TEXTAREA_ALIAS}.PropertyEditorUi`;
 
 // Shared data-type settings. Keys must match the C# [ConfigurationField] keys so the values are
 // stored under the same aliases and read back via IDataType.ConfigurationObject server-side.

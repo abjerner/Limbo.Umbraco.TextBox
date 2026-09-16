@@ -22,7 +22,7 @@ public class TextAreaValueConverter : PropertyValueConverterBase {
     }
 
     public override bool IsConverter(IPublishedPropertyType propertyType) {
-        return propertyType.EditorAlias == TextAreaDataEditor.EditorAlias;
+        return propertyType.EditorAlias == TextAreaPropertyEditor.EditorAlias;
     }
 
     public override object? ConvertSourceToIntermediate(IPublishedElement owner, IPublishedPropertyType propertyType, object? source, bool preview) {
