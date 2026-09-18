@@ -13,7 +13,7 @@
     <Authors>Anders Bjerner</Authors>
     <Copyright>Copyright © $([System.DateTime]::UtcNow.ToString(`yyyy`))</Copyright>
     <Title>Limbo Textbox</Title>
-    <Description>Textbox property editor for Umbraco 17.</Description>
+    <Description>Extended text box and text area property editors for Umbraco 17.</Description>
   </PropertyGroup>
 
   <!-- Information for the NuGet package -->
