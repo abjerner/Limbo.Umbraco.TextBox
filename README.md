@@ -22,7 +22,7 @@
 <table>
   <tr>
     <td><strong>License:</strong></td>
-    <td><a href="./LICENSE.md"><strong>MIT License</strong></a></td>
+    <td><a href="https://github.com/abjerner/Limbo.Umbraco.TextBox/blob/v17/main/LICENSE.md"><strong>MIT License</strong></a></td>
   </tr>
   <tr>
     <td><strong>Umbraco:</strong></td>
@@ -48,13 +48,13 @@
 The Umbraco 17 version of this package is only available via [**NuGet**](https://www.nuget.org/packages/Limbo.Umbraco.TextBox). To install the package, you can use either .NET CLI:
 
 ```
-dotnet add package Limbo.Umbraco.TextBox --version 17.0.0-alpha001
+dotnet add package Limbo.Umbraco.TextBox --version 17.0.0-alpha002
 ```
 
 or the NuGet Package Manager:
 
 ```
-Install-Package Limbo.Umbraco.TextBox -Version 17.0.0-alpha001
+Install-Package Limbo.Umbraco.TextBox -Version 17.0.0-alpha002
 ```
 
 ### Other versions of Umbraco
