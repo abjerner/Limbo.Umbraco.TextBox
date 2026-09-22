@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Skybrud.Essentials.Security.Extensions;
 using Umbraco.Cms.Core.Manifest;
 using Umbraco.Cms.Infrastructure.Manifest;
+
+using static Limbo.Umbraco.TextBox.TextBoxPackage;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -13,24 +14,26 @@ public class TextBoxManifestReader : IPackageManifestReader {
 
     public Task<IEnumerable<PackageManifest>> ReadPackageManifestsAsync() {
 
-        string alias = TextBoxPackage.Alias;
-        string cacheBuster = TextBoxPackage.InformationalVersion.ToMd5Hash();
-
         List<PackageManifest> list = [
             new() {
                 AllowTelemetry = true,
-                Id = TextBoxPackage.Alias,
-                Name = TextBoxPackage.Name,
-                Version = TextBoxPackage.InformationalVersion,
+                Id = Alias,
+                Name = Name,
+                Version = InformationalVersion,
                 AllowPublicAccess = false,
                 Extensions = [
                     new {
                         type = "bundle",
-                        alias = $"{alias}.Bundle",
-                        name = $"{TextBoxPackage.Name}: Bundle",
-                        js = $"/App_Plugins/{alias}/limbo-textbox.js?v={cacheBuster}",
+                        alias = $"{Alias}.Bundle",
+                        name = $"{Name}: Bundle",
+                        js = $"/App_Plugins/{Alias}/limbo-textbox.js",
                     }
-                ]
+                ],
+                Importmap = new PackageManifestImportmap {
+                    Imports = new Dictionary<string, string> {
+                        {"@limbo/textbox", $"/App_Plugins/{Alias}/limbo-textbox.js"}
+                    }
+                }
             }
 
         ];

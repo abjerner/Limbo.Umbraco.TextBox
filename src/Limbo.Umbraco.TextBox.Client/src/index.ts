@@ -19,115 +19,128 @@ const TEXTAREA_UI_ALIAS = `${TEXTAREA_ALIAS}.PropertyEditorUi`;
 // Shared data-type settings. Keys must match the C# [ConfigurationField] keys so the values are
 // stored under the same aliases and read back via IDataType.ConfigurationObject server-side.
 const sharedSettings = [
-  {
-    alias: 'enforce',
-    label: 'Enforce limit',
-    description: 'Enforce the limit.',
-    propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
-  },
-  {
-    alias: 'placeholder',
-    label: 'Placeholder',
-    description: 'A placeholder text to show when the field is empty.',
-    propertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox',
-  },
-  {
-    alias: 'fallback',
-    label: 'Fallback',
-    description: 'A fallback text used instead if the property is left blank.',
-    propertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox',
-  },
-  {
-    alias: 'stripHtml',
-    label: 'Strip HTML',
-    description: 'Select if HTML entered by the user should be stripped in the output value.',
-    propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
-  },
-  {
-    alias: 'nullable',
-    label: 'Nullable?',
-    description:
-      'Indicates whether properties of this type should be nullable - meaning that white space values will be converted to null.',
-    propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
-  },
+    {
+        alias: 'enforce',
+        label: 'Enforce limit',
+        description: 'Enforce the limit.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
+    },
+    {
+        alias: 'placeholder',
+        label: 'Placeholder',
+        description: 'A placeholder text to show when the field is empty.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox',
+    },
+    {
+        alias: 'fallback',
+        label: 'Fallback',
+        description: 'A fallback text used instead if the property is left blank.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.TextBox',
+    },
+    {
+        alias: 'stripHtml',
+        label: 'Strip HTML',
+        description: 'Select if HTML entered by the user should be stripped in the output value.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
+    },
+    {
+        alias: 'nullable',
+        label: 'Nullable?',
+        description:
+            'Indicates whether properties of this type should be nullable - meaning that white space values will be converted to null.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
+    },
 ];
 
 const textbox: ManifestPropertyEditorUi = {
-  type: 'propertyEditorUi',
-  alias: TEXTBOX_UI_ALIAS,
-  name: `${NAME}: Textbox Property Editor UI`,
-  element: () => import('./textbox.element.js'),
-  meta: {
-    label: 'Limbo Textbox',
-    icon: 'icon-autofill',
-      group: 'Limbo',
-      propertyEditorSchemaAlias: TEXTBOX_ALIAS,
-    settings: {
-      properties: [
-        {
-          alias: 'maxChars',
-          label: 'Maximum allowed characters',
-          description: 'If empty, 500 character limit.',
-          propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer',
+    type: 'propertyEditorUi',
+    alias: TEXTBOX_UI_ALIAS,
+    name: `${NAME}: Textbox Property Editor UI`,
+    element: () => import('./textbox.element.js'),
+    meta: {
+        label: 'Limbo Textbox',
+        icon: 'icon-autofill',
+            group: 'Limbo',
+            propertyEditorSchemaAlias: TEXTBOX_ALIAS,
+        settings: {
+            properties: [
+                {
+                    alias: 'maxChars',
+                    label: 'Maximum allowed characters',
+                    description: 'If empty, 500 character limit.',
+                    propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer',
+                },
+                ...sharedSettings,
+            ],
         },
-        ...sharedSettings,
-      ],
     },
-  },
 };
 
 const textarea: ManifestPropertyEditorUi = {
-  type: 'propertyEditorUi',
-  alias: TEXTAREA_UI_ALIAS,
-  name: `${NAME}: Textarea Property Editor UI`,
-  element: () => import('./textarea.element.js'),
-  meta: {
-    label: 'Limbo Textarea',
-    icon: 'icon-application-window-alt',
-    group: 'Limbo',
-    propertyEditorSchemaAlias: TEXTAREA_ALIAS,
-    settings: {
-      properties: [
-        {
-          alias: 'maxChars',
-          label: 'Maximum allowed characters',
-          description: 'If empty - no character limit.',
-          propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer',
+    type: 'propertyEditorUi',
+    alias: TEXTAREA_UI_ALIAS,
+    name: `${NAME}: Textarea Property Editor UI`,
+    element: () => import('./textarea.element.js'),
+    meta: {
+        label: 'Limbo Textarea',
+        icon: 'icon-application-window-alt',
+        group: 'Limbo',
+        propertyEditorSchemaAlias: TEXTAREA_ALIAS,
+        settings: {
+            properties: [
+                {
+                    alias: 'maxChars',
+                    label: 'Maximum allowed characters',
+                    description: 'If empty - no character limit.',
+                    propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer',
+                },
+                {
+                    alias: 'rows',
+                    label: 'Number of rows',
+                    description: 'If empty - 10 rows would be set as the default value.',
+                    propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer',
+                },
+                ...sharedSettings,
+            ],
         },
-        {
-          alias: 'rows',
-          label: 'Number of rows',
-          description: 'If empty - 10 rows would be set as the default value.',
-          propertyEditorUiAlias: 'Umb.PropertyEditorUi.Integer',
-        },
-        ...sharedSettings,
-      ],
     },
-  },
 };
 
 const localizations: Array<ManifestLocalization> = [
-  {
-    type: 'localization',
-    alias: `${ALIAS}.Localization.En`,
-    name: `${NAME}: English`,
-    meta: { culture: 'en' },
-    js: () => import('./localization/en.js'),
-  },
-  {
-    type: 'localization',
-    alias: `${ALIAS}..Localization.Da`,
-    name: `${NAME}: Danish`,
-    meta: { culture: 'da-dk' },
-    js: () => import('./localization/da.js'),
-  },
-  {
-    type: 'localization',
-    alias: `${ALIAS}.Localization.Cs`,
-    name: `${ NAME }: Czech`,
-    meta: { culture: 'cs-cz' },
-    js: () => import('./localization/cs.js'),
-  },
+    {
+        type: 'localization',
+        alias: `${ALIAS}.Localization.En`,
+        name: `${NAME}: English`,
+        meta: { culture: 'en' },
+        js: () => import('./localization/en.js'),
+    },
+    {
+        type: 'localization',
+        alias: `${ALIAS}..Localization.Da`,
+        name: `${NAME}: Danish`,
+        meta: { culture: 'da-dk' },
+        js: () => import('./localization/da.js'),
+    },
+    {
+        type: 'localization',
+        alias: `${ALIAS}.Localization.Cs`,
+        name: `${ NAME }: Czech`,
+        meta: { culture: 'cs-cz' },
+        js: () => import('./localization/cs.js'),
+    },
 ];
 
 export const manifests = [textbox, textarea, ...localizations];
+
+// Public configuration resolver API. A consuming solution can import these from the package bundle
+// (or from config-resolver.js when exposed as a package export) and register one resolver per editor.
+export {
+    setLimboTextBoxConfigResolver,
+    setLimboTextAreaConfigResolver,
+} from './config-resolver.js';
+export type {
+    LimboTextEditorConfig,
+    LimboTextEditorConfigResolverContext,
+    LimboTextBoxConfigResolver,
+    LimboTextAreaConfigResolver,
+} from './config-resolver.js';
