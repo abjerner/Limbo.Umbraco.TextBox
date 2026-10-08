@@ -1,4 +1,3 @@
-// [CHANGE: upgrade to Umbraco 17] Related: limbo-text-editor.base.ts, index.ts
 import { customElement, html, ifDefined, state } from '@umbraco-cms/backoffice/external/lit';
 import { LimboTextEditorElementBase } from './limbo-text-editor.base.js';
 import { limboTextAreaConfigResolver, type LimboTextEditorConfig } from './config-resolver.js';
@@ -20,6 +19,7 @@ export class LimboTextAreaPropertyEditorUiElement extends LimboTextEditorElement
         return html`
             <uui-textarea
                 .value=${this.value ?? ''}
+                .label=${this.localize.term('general_fieldFor', [this.name])}
                 placeholder=${ifDefined(this._placeholder || undefined)}
                 rows=${this._rows}
                 maxlength=${ifDefined(this._enforce && this._limit > 0 ? this._limit : undefined)}

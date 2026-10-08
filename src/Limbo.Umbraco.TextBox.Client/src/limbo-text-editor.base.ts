@@ -33,6 +33,9 @@ export abstract class LimboTextEditorElementBase extends UmbLitElement implement
     @property({ type: String })
     public value = '';
 
+    @property({ type: String })
+    name?: string;
+
     @state() protected _limit = 0;
     @state() protected _enforce = false;
     @state() protected _placeholder = '';
