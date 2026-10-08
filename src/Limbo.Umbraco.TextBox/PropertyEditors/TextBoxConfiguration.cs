@@ -20,7 +20,7 @@ public class TextBoxConfiguration {
     public int? MaxChars { get; set; }
 
     /// <summary>
-    /// Gets or sets whether <see cref="MaxChars"/> will be encorced.
+    /// Gets or sets whether <see cref="MaxChars"/> will be enforced.
     /// </summary>
     [ConfigurationField("enforce")]
     public bool EnforceLimit { get; set; }
@@ -48,5 +48,17 @@ public class TextBoxConfiguration {
     /// </summary>
     [ConfigurationField("nullable")]
     public bool IsNullable { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the icon to prepend to the textbox.
+    /// </summary>
+    [ConfigurationField("prependIcon")]
+    public string? PrependIcon { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the icon to append to the textbox.
+    /// </summary>
+    [ConfigurationField("appendIcon")]
+    public string? AppendIcon { get; set; }
 
 }

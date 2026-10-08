@@ -46,10 +46,21 @@ const sharedSettings = [
     {
         alias: 'nullable',
         label: 'Nullable?',
-        description:
-            'Indicates whether properties of this type should be nullable - meaning that white space values will be converted to null.',
+        description: 'Indicates whether properties of this type should be nullable - meaning that white space values will be converted to null.',
         propertyEditorUiAlias: 'Umb.PropertyEditorUi.Toggle',
     },
+    {
+        alias: 'prependIcon',
+        label: 'Prepend Icon',
+        description: 'The icon to prepend to the textbox.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.IconPicker',
+    },
+    {
+        alias: 'appendIcon',
+        label: 'Append Icon',
+        description: 'The icon to append to the textbox.',
+        propertyEditorUiAlias: 'Umb.PropertyEditorUi.IconPicker',
+    }
 ];
 
 const textbox: ManifestPropertyEditorUi = {
